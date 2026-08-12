@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "solar-eclipse"
+version = "0.1.0"
+description = "Solar eclipse prediction: type, location and duration, AD 0-2500 and beyond"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Christian Parpart" }]
+dependencies = ["numpy>=1.24", "skyfield>=1.45"]
+
+[project.urls]
+Homepage = "https://github.com/christianparpart/solar-eclipse"
+
+[project.scripts]
+solar-eclipse-catalog = "solar_eclipse.catalog:master"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
